@@ -10,8 +10,10 @@ const db = require('./models');
 
 // Roteadores
 const postsRouter = require('./routes/Posts')
-
 app.use("/posts", postsRouter)
+
+const CommentsRouter = require('./routes/Comments')
+app.use("/comments", CommentsRouter);
 
 db.sequelize.sync().then(() => {
     app.listen(3001, () => {
